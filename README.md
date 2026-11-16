@@ -2,65 +2,49 @@
 
 ![Agent Evaluation · Evidence Grounding · Context Engineering](https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=18&duration=2800&pause=800&color=06B6D4&center=true&vCenter=true&width=880&height=45&lines=Agent+Evaluation;Evidence+Grounding;Context+Engineering)
 
-# Hi, I'm KBber
+# KBber · AI 应用工程
 
-**Building reliable LLM Agents** — Agent 评测 · 证据溯源 · 上下文工程
-
-```
-Agent Reliability Engineering  ·  Evidence-Grounded AI  ·  Context Engineering
-```
-
----
-
-## 我在解决什么问题
-
-大模型能干活，但不能**信**。答案里混着一个编造的财务数字、一次无法追溯的结论、一段没有来源的引用 —— 这些在真实业务里是致命的。
-
-我的工作聚焦在让 LLM 系统具备工程属性：
-
-| 方向 | 具体问题 | 方法 |
-|---|---|---|
-| **三态决策** | LLM 输出无法用 true/false 断言 | `PASS / FAIL / REVIEW_REQUIRED` + 人工兜底通道 |
-| **证据溯源** | 结论凭什么可信 | 每个数字/结论绑定 `page + bbox`，可点开原文 |
-| **失败分类** | 出错了不知道为什么错 | Failure Taxonomy + Precondition + Trace ID |
-| **上下文工程** | 多轮追问就"忘了"前面说过什么 | 实体追踪 + 指代消解 + 短期记忆 |
-| **评测基准** | 没人说清楚"什么算好" | 自建垂类 benchmark + 多模型量化对比 |
-
----
+我做面向金融文档和业务审核的 LLM 应用，主要解决三件事：**答案能回到原文、审核有明确规则、多轮对话能跟住上下文。**
 
 ## 精选项目
 
-| 项目 | 一句话 | 技术栈 |
-|---|---|---|
-| **[finverify](https://github.com/KBber/finverify)** | 财报数字溯源 —— 每个财务数字都能点开看到原文出处 | Python · PyMuPDF · RAG · Benchmark |
-| **[graphrag-financial-report](https://github.com/KBber/graphrag-financial-report)** | GraphRAG 处理上市公司年报，多跳财务查询 | GraphRAG · Neo4j · FastAPI · Ragas |
-| **[react-llm-memory-agent](https://github.com/KBber/react-llm-memory-agent)** | Agent 记住"那另一家呢"这类追问 | ReAct · Memory · Entity Tracking |
-| **[video-skills-repo](https://github.com/KBber/video-skills-repo)** | 将 5 套共 26 个视频 Agent Skills 打包成可一键部署的工具集 | MiniMax Code · HyperFrames · Remotion · Video Use |
+### [finverify](https://github.com/KBber/finverify) · 财报数字溯源与校验
 
-## 近期本地项目
+把抽取出的财报数字关联到 PDF 页码、坐标和表格单元格，点击数字可高亮原文。用会计勾稽关系检查数字是否一致，输出 `PASS`、`FAIL` 或 `REVIEW_REQUIRED`，方便人工定位证据并复核。
 
-- **TenderGuard v0.4** · 招投标合规审查。通过混合检索找回原文证据，再用规则引擎校验，证据不足或冲突时转人工复核。
-- **PosePilot** · 离线拍照姿势灵感册。按咖啡馆、街拍、旅行等场景查姿势示意图、动作步骤和手机机位，支持收藏拍摄清单。
-- **vibe-knowledge-film** · 知识短视频制作 Skill。从选题或文案生成字幕、分镜和动效工程，先产出约 30 秒样片供确认。
+**实现** · Python、PyMuPDF、规则校验、命令行与浏览器演示。
 
-## 技术栈
+### [graphrag-financial-report](https://github.com/KBber/graphrag-financial-report) · 上市公司年报多跳问答
 
-**语言与后端**　Python（异步并发）· FastAPI · Linux · 异步 IO
-**AI 应用**　　　Agent Workflow · RAG · GraphRAG · 混合检索（BM25 + Vector）· 工具调用
-**LLMOps**　　　　LangSmith · Phoenix · Ragas · Trace / Evaluation / Debug
-**模型**　　　　　GPT · DeepSeek · Qwen · 开源与闭源混合
-**数据**　　　　　Neo4j · FAISS · Pydantic 强类型 Schema
+把年报中的实体和关系建成 Neo4j 知识图谱。用局部检索查具体公司或指标，用全局检索处理跨主题问题，支持需要串联多处信息的财务查询。
 
----
+**实现** · GraphRAG、Neo4j、FastAPI、Ragas。
 
-## 关于我
+### [react-llm-memory-agent](https://github.com/KBber/react-llm-memory-agent) · 多轮财务问答 Agent
 
-- 🎓 燕山大学 · 计算机科学与技术
-- 💼 AI 应用工程 / 解决方案落地 —— 金融与政企场景的 LLM 系统从 PoC 到生产
-- 🏷️ Agent Loop · Harness Engineering · Context Engineering
-- 📍 开放远程协作
+当用户追问「那另一家呢？」时，从会话中恢复候选公司，把追问改写为明确的问题再检索。短期记忆按会话持久化，项目记录了 36 个单元测试和端到端对照用例。
 
----
+**实现** · ReAct、实体追踪、指代消解、会话级 JSON 存储。
+
+### [video-skills-repo](https://github.com/KBber/video-skills-repo) · 视频技能打包与部署
+
+把 HyperFrames、Remotion 等 5 套上游工具的 26 个 Agent Skills 打包到同一安装流程。提供 Windows 和 macOS/Linux 安装脚本，检查运行时依赖，并按 MiniMax Code 的规则验证技能能否被发现。
+
+**实现** · PowerShell、Bash、Python、GitHub Actions。
+
+## 本地项目
+
+- **TenderGuard v0.4 · 招投标合规审查**。保留 PDF 的段落和表格坐标，用 BM25 与向量检索召回证据，再由规则引擎校验。证据不足或冲突时转人工复核，评测按检索和端到端决策分别运行。
+- **PosePilot · 离线拍照姿势工具**。把场景、姿势示意、动作拆解和手机机位组织成可按场景浏览和收藏的页面，可离线打开。提供构建校验和浏览器端到端测试命令。
+- **vibe-knowledge-film · 知识短视频制作 Skill**。从选题或文案生成字幕稿、分镜和动效代码，先输出约 30 秒样片确认节奏和风格，再按同一流程做全片。
+
+## 技术方向
+
+- **LLM 应用与评测** · ReAct、工具调用、会话记忆、端到端回归和检索消融。
+- **文档与检索** · 版面解析、结构化抽取、BM25 / 向量混合检索、Neo4j。
+- **工程与交付** · Python、FastAPI、Pydantic、pytest、GitHub Actions。
+
+**教育背景** · 燕山大学，计算机科学与技术
 
 ## GitHub 活动
 
@@ -82,10 +66,4 @@ Agent Reliability Engineering  ·  Evidence-Grounded AI  ·  Context Engineering
   <img src="https://raw.githubusercontent.com/KBber/KBber/main/assets/github-snake.svg" alt="GitHub 贡献贪吃蛇">
 </picture>
 
-## 联系我
-
-[![GitHub](https://img.shields.io/badge/GitHub-KBber-black?style=for-the-badge&logo=github)](https://github.com/KBber)
-
-[个人网站](https://kbber.github.io/) · [全部公开仓库](https://github.com/KBber?tab=repositories)
-
-欢迎交流 Agent 评测方法、证据溯源设计、RAG 落地踩坑。
+[全部公开仓库](https://github.com/KBber?tab=repositories)
