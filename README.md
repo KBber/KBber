@@ -2,7 +2,7 @@
 
 ![Agent Evaluation · Evidence Grounding · Context Engineering](https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=18&duration=2800&pause=800&color=06B6D4&center=true&vCenter=true&width=880&height=45&lines=Agent+Evaluation;Evidence+Grounding;Context+Engineering)
 
-# Hi, I'm Xue Dingtian (薛丁天) 👋
+# Hi, I'm KBber
 
 **Building reliable LLM Agents** — Agent 评测 · 证据溯源 · 上下文工程
 
