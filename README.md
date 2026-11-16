@@ -1,3 +1,7 @@
+![KBber · Building reliable LLM Agents](assets/header.svg)
+
+![Agent Evaluation · Evidence Grounding · Context Engineering](https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=18&duration=2800&pause=800&color=06B6D4&center=true&vCenter=true&width=880&height=45&lines=Agent+Evaluation;Evidence+Grounding;Context+Engineering)
+
 # Hi, I'm Xue Dingtian (薛丁天) 👋
 
 **Building reliable LLM Agents** — Agent 评测 · 证据溯源 · 上下文工程
@@ -31,8 +35,13 @@ Agent Reliability Engineering  ·  Evidence-Grounded AI  ·  Context Engineering
 | **[finverify](https://github.com/KBber/finverify)** | 财报数字溯源 —— 每个财务数字都能点开看到原文出处 | Python · PyMuPDF · RAG · Benchmark |
 | **[graphrag-financial-report](https://github.com/KBber/graphrag-financial-report)** | GraphRAG 处理上市公司年报，多跳财务查询 | GraphRAG · Neo4j · FastAPI · Ragas |
 | **[react-llm-memory-agent](https://github.com/KBber/react-llm-memory-agent)** | Agent 记住"那另一家呢"这类追问 | ReAct · Memory · Entity Tracking |
+| **[video-skills-repo](https://github.com/KBber/video-skills-repo)** | 将 5 套共 26 个视频 Agent Skills 打包成可一键部署的工具集 | MiniMax Code · HyperFrames · Remotion · Video Use |
 
----
+## 近期本地项目
+
+- **TenderGuard v0.4** · 招投标合规审查。通过混合检索找回原文证据，再用规则引擎校验，证据不足或冲突时转人工复核。
+- **PosePilot** · 离线拍照姿势灵感册。按咖啡馆、街拍、旅行等场景查姿势示意图、动作步骤和手机机位，支持收藏拍摄清单。
+- **vibe-knowledge-film** · 知识短视频制作 Skill。从选题或文案生成字幕、分镜和动效工程，先产出约 30 秒样片供确认。
 
 ## 技术栈
 
@@ -53,8 +62,30 @@ Agent Reliability Engineering  ·  Evidence-Grounded AI  ·  Context Engineering
 
 ---
 
+## GitHub 活动
+
+<table>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/KBber/KBber/main/profile-summary-card-output/default/0-profile-details.svg" alt="GitHub 活动概览"></td>
+    <td><img src="https://raw.githubusercontent.com/KBber/KBber/main/profile-summary-card-output/default/1-repos-per-language.svg" alt="按仓库统计的语言分布"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/KBber/KBber/main/profile-summary-card-output/default/2-most-commit-language.svg" alt="按提交统计的语言分布"></td>
+    <td><img src="https://raw.githubusercontent.com/KBber/KBber/main/profile-summary-card-output/default/4-productive-time.svg" alt="提交时段"></td>
+  </tr>
+</table>
+
+![3D 贡献图](https://raw.githubusercontent.com/KBber/KBber/main/profile-3d-contrib/profile-green-animate.svg)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KBber/KBber/main/assets/github-snake-dark.svg">
+  <img src="https://raw.githubusercontent.com/KBber/KBber/main/assets/github-snake.svg" alt="GitHub 贡献贪吃蛇">
+</picture>
+
 ## 联系我
 
 [![GitHub](https://img.shields.io/badge/GitHub-KBber-black?style=for-the-badge&logo=github)](https://github.com/KBber)
+
+[个人网站](https://kbber.github.io/) · [全部公开仓库](https://github.com/KBber?tab=repositories)
 
 欢迎交流 Agent 评测方法、证据溯源设计、RAG 落地踩坑。
